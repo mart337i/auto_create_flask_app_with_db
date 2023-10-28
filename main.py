@@ -3,12 +3,12 @@ import subprocess
 import sys
 
 # Step 1: Check if venv module is available
-if subprocess.call([sys.executable, '-m', 'venv', 'flask_mariadb_venv']):
+if subprocess.call([sys.executable, '-m', 'venv', '.venv']):
     print("Error: The venv module is not available.")
     sys.exit(1)
 
 # Step 2: Activate virtual environment
-activate_file = ".\\flask_mariadb_venv\\Scripts\\activate" if os.name == "nt" else "./flask_mariadb_venv/bin/activate"
+activate_file = ".\\.venv\\Scripts\\activate" if os.name == "nt" else "./.venv/bin/activate"
 activation_command = f"source {activate_file}"
 subprocess.call(["bash", "-c", activation_command])
 
